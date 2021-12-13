@@ -25,7 +25,15 @@ config :sengo, SengoWeb.Endpoint,
   secret_key_base: "jgM0Z+fwsnKjdmOQIb3FL771cI/7R07o/8yek4t33aMB3ERBk264nI8xq6IzT58P",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ]
   ]
 
 # ## SSL Support
@@ -36,6 +44,7 @@ config :sengo, SengoWeb.Endpoint,
 #
 #     mix phx.gen.cert
 #
+
 # Note that this task requires Erlang/OTP 20 or later.
 # Run `mix help phx.gen.cert` for more information.
 #
