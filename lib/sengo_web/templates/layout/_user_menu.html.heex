@@ -1,4 +1,4 @@
-<div class="relative bg-white">
+<div class="relative bg-white" x-data="{ open: false }">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -32,10 +32,10 @@
       <div class="pt-5 pb-6 px-5">
         <div class="flex items-center justify-between">
           <div>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg" alt="Workflow">
+            <img class="h-8 w-auto" src={Routes.static_path(@conn, "/images/sengo.png")} alt="Sengo">
           </div>
           <div class="-mr-2">
-            <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+            <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" x-on:click="open = ! open">
               <span class="sr-only">Close menu</span>
               <!-- Heroicon name: outline/x -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -49,15 +49,18 @@
         <div class="grid grid-cols-2 gap-y-4 gap-x-8">
         </div>
         <div>
-          <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700">
-            Sign up
-          </a>
-          <p class="mt-6 text-center text-base font-medium text-gray-500">
-            Existing customer?
-            <a href="#" class="text-blue-600 hover:text-blue-500">
-              Sign in
-            </a>
-          </p>
+          <%= if @current_user do %>
+            <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+            <p class="mt-6 text-center text-base font-medium text-gray-500">
+             <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete, class: "text-blue-600 hover:text-blue-500" %>
+            </p>
+          <% else %>
+            <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+            <p class="mt-6 text-center text-base font-medium text-gray-500">
+              Don't have an account?
+             <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "text-blue-600 hover:text-blue-500" %>
+            </p>
+          <% end %>
         </div>
       </div>
     </div>
