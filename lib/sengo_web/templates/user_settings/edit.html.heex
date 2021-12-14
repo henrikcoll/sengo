@@ -2,7 +2,7 @@
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Update email</h3>
+        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= gettext "Update email" %></h3>
         <p class="mt-1 text-sm text-gray-600">
         </p>
       </div>
@@ -12,27 +12,27 @@
         <%= hidden_input f, :action, name: "action", value: "update_email" %>
         <%= if @email_changeset.action do %>
           <div class="alert alert-danger">
-            <p>Oops, something went wrong! Please check the errors below.</p>
+            <p><%= gettext "Oops, something went wrong! Please check the errors below." %></p>
           </div>
         <% end %>
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-4">
-                <%= label f, :email, class: "block text-sm font-medium text-gray-700" %>
+                <%= label f, :email, gettext("Email"), class: "block text-sm font-medium text-gray-700" %>
                 <%= email_input f, :email, required: true, autocomplete: "email", class: "mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
                 <%= error_tag f, :email %>
               </div>
 
               <div class="col-span-6 sm:col-span-4">
-                <%= label f, :current_password, for: "current_password_for_email", class: "block text-sm font-medium text-gray-700" %>
+                <%= label f, :current_password, gettext("Current password"), for: "current_password_for_email", class: "block text-sm font-medium text-gray-700" %>
                 <%= password_input f, :current_password, required: true, name: "current_password", id: "current_password_for_email", autocomplete: "current-password", class: "mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
                 <%= error_tag f, :current_password %>
               </div>
             </div>
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <%= submit "Save", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+            <%= gettext("save") |> submit(class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500") %>
           </div>
         </div>
       </.form>
@@ -50,7 +50,7 @@
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Update password</h3>
+        <h3 class="text-lg font-medium leading-6 text-gray-900"><%= gettext "Update password" %></h3>
         <p class="mt-1 text-sm text-gray-600">
         </p>
       </div>
@@ -60,33 +60,33 @@
         <%= hidden_input f, :action, name: "action", value: "update_password" %>
         <%= if @password_changeset.action do %>
           <div class="alert alert-danger">
-            <p>Oops, something went wrong! Please check the errors below.</p>
+            <p><%= gettext "Oops, something went wrong! Please check the errors below." %></p>
           </div>
         <% end %>
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-4">
-                <%= label f, :password, "New password", class: "block text-sm font-medium text-gray-700" %>
+                <%= label f, :password, gettext("New password"), class: "block text-sm font-medium text-gray-700" %>
                 <%= password_input f, :password, required: true, autocomplete: "new-password", class: "mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
                 <%= error_tag f, :password %>
               </div>
 
               <div class="col-span-6 sm:col-span-4">
-                <%= label f, :password_confirmation, "Confirm new password", class: "block text-sm font-medium text-gray-700" %>
+                <%= label f, :password_confirmation, gettext("Confirm new password"), class: "block text-sm font-medium text-gray-700" %>
                 <%= password_input f, :password_confirmation, required: true, autocomplete: "new-password", class: "mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
                 <%= error_tag f, :password_confirmation %>
               </div>
 
               <div class="col-span-6 sm:col-span-4">
-                <%= label f, :current_password, for: "current_password_for_email", class: "block text-sm font-medium text-gray-700" %>
+                <%= label f, :current_password, gettext("Current password"), for: "current_password_for_email", class: "block text-sm font-medium text-gray-700" %>
                 <%= password_input f, :current_password, required: true, name: "current_password", id: "current_password_for_email", autocomplete: "current-password", class: "mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" %>
                 <%= error_tag f, :current_password %>
               </div>
             </div>
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <%= submit "Save", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+            <%= gettext("save") |> submit(class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500") %>
           </div>
         </div>
       </.form>

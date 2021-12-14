@@ -18,11 +18,11 @@
       </div>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
         <%= if @current_user do %>
-          <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete, class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" %>
-          <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+          <%= gettext("Log out") |> link(to: Routes.user_session_path(@conn, :delete), method: :delete, class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900") %>
+          <%= gettext("Settings") |> link(to: Routes.user_settings_path(@conn, :edit), class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700") %>
         <% else %>
-          <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" %>
-          <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+          <%= gettext("Register") |> link(to: Routes.user_registration_path(@conn, :new), class: "whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900") %>
+          <%= gettext("Log in") |> link(to: Routes.user_session_path(@conn, :new), class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700") %>
         <% end %>
       </div>
     </div>
@@ -50,15 +50,15 @@
         </div>
         <div>
           <%= if @current_user do %>
-            <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+            <%= gettext("Settings") |> link(to: Routes.user_settings_path(@conn, :edit), class: "w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700") %>
             <p class="mt-6 text-center text-base font-medium text-gray-500">
-             <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete, class: "text-blue-600 hover:text-blue-500" %>
+             <%= gettext("Log out") |> link(to: Routes.user_session_path(@conn, :delete), method: :delete, class: "text-blue-600 hover:text-blue-500") %>
             </p>
           <% else %>
-            <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700" %>
+            <%= gettext("Log in") |> link(to: Routes.user_session_path(@conn, :new), class: "w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700") %>
             <p class="mt-6 text-center text-base font-medium text-gray-500">
               Don't have an account?
-             <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "text-blue-600 hover:text-blue-500" %>
+             <%= gettext("Register") |> link(to: Routes.user_registration_path(@conn, :new), class: "text-blue-600 hover:text-blue-500") %>
             </p>
           <% end %>
         </div>
