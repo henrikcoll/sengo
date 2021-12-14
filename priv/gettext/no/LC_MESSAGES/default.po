@@ -27,7 +27,7 @@ msgstr "Logg inn"
 #: lib/sengo_web/templates/layout/_user_menu.html.heex:24
 #: lib/sengo_web/templates/layout/_user_menu.html.heex:61 lib/sengo_web/templates/user_registration/new.html.heex:46
 msgid "Register"
-msgstr "Register"
+msgstr "Registrer"
 
 #, elixir-format
 #: lib/sengo_web/templates/layout/_user_menu.html.heex:22
