@@ -1,0 +1,15 @@
+{
+  "name": "sengo",
+  "restart": "no",
+  "port": "4000",
+  "env": {
+    "DATABASE_URL": "postgres://postgres:postgres@postgres/sengo",
+    "SECRET_KEY_BASE": "p1XofSgtJH7OYhHHdsRPManXs7KgFba/cmecBHynRwtRlJGbjaS/fRqG+gYPB7TZ"
+  },
+  "template": "phoenix",
+  "compress": false,
+  "letsencrypt": false,
+  "elixir": {
+    "releaseCommand": [ "/app/bin/sengo", "eval", "Sengo.Release.migrate"]
+  }
+}
