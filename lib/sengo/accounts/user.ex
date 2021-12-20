@@ -4,6 +4,8 @@ defmodule Sengo.Accounts.User do
 
   schema "users" do
     field :email, :string
+    field :first_name, :string
+    field :last_name, :string
     field :admin, :boolean, default: false
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
@@ -31,9 +33,10 @@ defmodule Sengo.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:email, :password, :first_name, :last_name])
     |> validate_email()
     |> validate_password(opts)
+    |> validate_profile()
   end
 
   defp validate_email(changeset) do
@@ -53,6 +56,11 @@ defmodule Sengo.Accounts.User do
     # |> validate_format(:password, ~r/[A-Z]/, message: "at least one upper case character")
     # |> validate_format(:password, ~r/[!?@#$%^&*_0-9]/, message: "at least one digit or punctuation character")
     |> maybe_hash_password(opts)
+  end
+
+  defp validate_profile(changeset) do
+    changeset
+    |> validate_required([:first_name, :last_name])
   end
 
   defp maybe_hash_password(changeset, opts) do
@@ -82,6 +90,29 @@ defmodule Sengo.Accounts.User do
     |> case do
       %{changes: %{email: _}} = changeset -> changeset
       %{} = changeset -> add_error(changeset, :email, "did not change")
+    end
+  end
+
+  @doc """
+  A user changeset for changing the profile.
+
+  It requires the first_name or last_name to change otherwise an error is added.
+  """
+  def profile_changeset(user, attrs) do
+    user
+    |> cast(attrs, [:first_name, :last_name])
+    |> validate_profile()
+    |> case do
+      %{changes: %{first_name: _}} = changeset ->
+        changeset
+
+      %{changes: %{last_name: _}} = changeset ->
+        changeset
+
+      %{} = changeset ->
+        changeset
+        |> add_error(:first_name, "did not change")
+        |> add_error(:last_name, "did not change")
     end
   end
 
