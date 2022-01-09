@@ -12,26 +12,25 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:21
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:55
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:65
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:130
 msgid "Log out"
 msgstr "Logg ut"
 
 #, elixir-format
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:25
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:58
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:73
 msgid "Log in"
 msgstr "Logg inn"
 
 #, elixir-format
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:24
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:61 lib/sengo_web/templates/user_registration/new.html.heex:46
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:72
+#: lib/sengo_web/templates/user_registration/new.html.heex:56
 msgid "Register"
 msgstr "Registrer"
 
 #, elixir-format
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:22
-#: lib/sengo_web/templates/layout/_user_menu.html.heex:53
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:64
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:129
 msgid "Settings"
 msgstr "Instillinger"
 
@@ -47,7 +46,7 @@ msgstr "Bekreft kontoen min"
 
 #, elixir-format
 #: lib/sengo_web/templates/user_reset_password/edit.html.heex:24
-#: lib/sengo_web/templates/user_settings/edit.html.heex:76
+#: lib/sengo_web/templates/user_settings/edit.html.heex:148
 msgid "Confirm new password"
 msgstr "Bekreft nytt passord"
 
@@ -58,13 +57,15 @@ msgstr "Lag ny bruker"
 
 #, elixir-format
 #: lib/sengo_web/templates/user_registration/new.html.heex:26
-#: lib/sengo_web/templates/user_reset_password/new.html.heex:14 lib/sengo_web/templates/user_session/new.html.heex:20
+#: lib/sengo_web/templates/user_reset_password/new.html.heex:14
+#: lib/sengo_web/templates/user_session/new.html.heex:20
 msgid "Email address"
 msgstr "Epost adresse"
 
 #, elixir-format
-#: lib/sengo_web/templates/user_registration/new.html.heex:40
-#: lib/sengo_web/templates/user_reset_password/edit.html.heex:12 lib/sengo_web/templates/user_reset_password/new.html.heex:7
+#: lib/sengo_web/templates/user_registration/new.html.heex:50
+#: lib/sengo_web/templates/user_reset_password/edit.html.heex:12
+#: lib/sengo_web/templates/user_reset_password/new.html.heex:7
 #: lib/sengo_web/templates/user_session/new.html.heex:36
 msgid "Forgot your password?"
 msgstr "Glemt passord?"
@@ -81,14 +82,16 @@ msgstr "Logg inn med din eksisterende konto"
 
 #, elixir-format
 #: lib/sengo_web/templates/user_reset_password/edit.html.heex:19
-#: lib/sengo_web/templates/user_settings/edit.html.heex:70
+#: lib/sengo_web/templates/user_settings/edit.html.heex:142
 msgid "New password"
 msgstr "Nytt passord"
 
 #, elixir-format
 #: lib/sengo_web/templates/user_registration/new.html.heex:4
-#: lib/sengo_web/templates/user_reset_password/edit.html.heex:4 lib/sengo_web/templates/user_settings/edit.html.heex:15
-#: lib/sengo_web/templates/user_settings/edit.html.heex:63
+#: lib/sengo_web/templates/user_reset_password/edit.html.heex:4
+#: lib/sengo_web/templates/user_settings/edit.html.heex:20
+#: lib/sengo_web/templates/user_settings/edit.html.heex:72
+#: lib/sengo_web/templates/user_settings/edit.html.heex:130
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr "Ops, noe gikk galt! Sjekk feilene nedenfor."
 
@@ -99,7 +102,7 @@ msgid "Or"
 msgstr "Eller"
 
 #, elixir-format
-#: lib/sengo_web/templates/user_registration/new.html.heex:30
+#: lib/sengo_web/templates/user_registration/new.html.heex:40
 #: lib/sengo_web/templates/user_session/new.html.heex:24
 msgid "Password"
 msgstr "Passord"
@@ -131,12 +134,12 @@ msgid "Sign in"
 msgstr "Logg inn"
 
 #, elixir-format
-#: lib/sengo_web/templates/user_settings/edit.html.heex:5
+#: lib/sengo_web/templates/user_settings/edit.html.heex:57
 msgid "Update email"
 msgstr "Oppdater epost"
 
 #, elixir-format
-#: lib/sengo_web/templates/user_settings/edit.html.heex:53
+#: lib/sengo_web/templates/user_settings/edit.html.heex:115
 msgid "Update password"
 msgstr "Oppdater passord"
 
@@ -146,18 +149,59 @@ msgid "create a new account"
 msgstr "lag ny konto"
 
 #, elixir-format, fuzzy
-#: lib/sengo_web/templates/user_settings/edit.html.heex:35
-#: lib/sengo_web/templates/user_settings/edit.html.heex:89
+#: lib/sengo_web/templates/user_settings/edit.html.heex:45
+#: lib/sengo_web/templates/user_settings/edit.html.heex:97
+#: lib/sengo_web/templates/user_settings/edit.html.heex:161
 msgid "save"
 msgstr "Lagre"
 
 #, elixir-format
-#: lib/sengo_web/templates/user_settings/edit.html.heex:28
-#: lib/sengo_web/templates/user_settings/edit.html.heex:82
+#: lib/sengo_web/templates/user_settings/edit.html.heex:90
+#: lib/sengo_web/templates/user_settings/edit.html.heex:154
 msgid "Current password"
 msgstr "Gjeldende passord"
 
 #, elixir-format
-#: lib/sengo_web/templates/user_settings/edit.html.heex:22
+#: lib/sengo_web/templates/user_settings/edit.html.heex:84
 msgid "Email"
 msgstr "Epost"
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:63
+msgid "Dashboard"
+msgstr "Dashbord"
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/user_registration/new.html.heex:31
+#: lib/sengo_web/templates/user_registration/new.html.heex:35
+#: lib/sengo_web/templates/user_settings/edit.html.heex:32
+msgid "First name"
+msgstr "Fornavn"
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:12
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:14
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:105
+#: lib/sengo_web/templates/layout/_user_menu.html.heex:107
+msgid "Home"
+msgstr "Hjem"
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/user_settings/edit.html.heex:38
+msgid "Last name"
+msgstr "Etternavn"
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/user_settings/edit.html.heex:5
+msgid "Profile"
+msgstr "Profil"
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/layout/root.html.heex:19
+msgid "© 2021 Sengo. All rights reserved."
+msgstr "© 2021 Sengo. Alle rettigheter forbeholdt ."
+
+#, elixir-format, ex-autogen
+#: lib/sengo_web/templates/layout/root.html.heex:21
+msgid "Privacy Policy"
+msgstr "Personvernerklæring"
