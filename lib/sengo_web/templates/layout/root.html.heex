@@ -9,10 +9,18 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body>
-    <div class="h-screen bg-gray-50">
-      <%= render "_user_menu.html", assigns %>
-      <%= @inner_content %>
-    </div>
+  <body class="bg-gray-50">
+      <div class="flex flex-col min-h-screen">
+        <div class="flex-grow">
+          <%= render "_user_menu.html", assigns %>
+          <%= @inner_content %>
+        </div>
+        <footer class="w-full max-w-container mx-auto border-t py-10 mt-5 text-center flex items-center justify-center text-sm text-gray-500">
+          <p>© 2021 Sengo. All rights reserved.</p>
+          <p class="ml-3 border-l border-gray-200 pl-3">
+            <a class="hover:text-teal-600" href="/privacy-policy">Privacy Policy</a>
+          </p>
+        </footer>
+      </div>
   </body>
 </html>

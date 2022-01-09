@@ -21,8 +21,8 @@ defmodule SengoWeb.Plugs.Locale do
   end
 
   defp get_locale(conn) do
-    conn.req_cookies["locale"] ||
-      conn.params["locale"]
+    conn.params["locale"] ||
+      conn.req_cookies["locale"]
   end
 
   defp update_cookie(conn, locale) do
